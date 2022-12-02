@@ -27,7 +27,7 @@ process() {
   ffmpeg \
     -hide_banner \
     -y \
-    -loglevel debug \
+    -loglevel warning \
     -i "$input" \
     -ar 8000
     -ac 1
