@@ -1,16 +1,5 @@
 #!/bin/bash
 set -e
-
-
-EXTENSION=${EXTENSION:-mp4}
-ENCODER=${ENCODER:-libx264}
-PRESET=${PRESET:-veryfast}
-CRF=${CRF:-35}
-THREADS=${THREADS:-1}
-CPU_LIMIT=${CPU_LIMIT:-30}
-PRIORITY=${PRIORITY:-19}
-ANALYZEDURATION=${ANALYZEDURATION:-100000000}
-PROBESIZE=${PROBESIZE:-100000000}
 WATCH=${WATCH:-/watch}
 OUTPUT=${OUTPUT:-/output}
 STORAGE=${STORAGE:-/storage}
@@ -35,17 +24,14 @@ process() {
   echo $(date +"%Y-%m-%d-%T")
 
   trap 'exit' INT
-  nice -"$PRIORITY" cpulimit -l "$CPU_LIMIT" -- ffmpeg \
+  nice -- ffmpeg \
     -hide_banner \
     -y \
     -loglevel warning \
-    -analyzeduration "$ANALYZEDURATION" \
-    -probesize "$PROBESIZE" \
     -i "$input" \
-    -c:v "$ENCODER" \
-    -preset "$PRESET" \
-    -crf "$CRF" \
-    -threads "$THREADS" \
+    -ar 8000
+    -ac 1
+    -c:a pcm_mulaw \
     "$destination"
 
   killall ffmpeg >/dev/null
