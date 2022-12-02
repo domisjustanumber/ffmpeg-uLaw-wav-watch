@@ -1,4 +1,4 @@
-FROM jrottenberg/ffmpeg
+FROM jrottenberg/ffmpeg:4-alpine
 RUN apk add --no-cache bash
 WORKDIR /usr/src/ffmpeg-watch
 COPY crontab /etc/crontabs/root
