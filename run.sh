@@ -24,7 +24,7 @@ process() {
   echo $(date +"%Y-%m-%d-%T")
 
   trap 'exit' INT
-  nice -- ffmpeg \
+  ffmpeg \
     -hide_banner \
     -y \
     -loglevel debug \
