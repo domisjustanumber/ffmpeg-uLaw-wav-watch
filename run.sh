@@ -22,6 +22,7 @@ process() {
   cd "$STORAGE" && mkdir -p "$(dirname "$filepath")" && cd ..
 
   echo $(date +"%Y-%m-%d-%T")
+  echo 'Saving file to $destination'
 
   trap 'exit' INT
   ffmpeg \
