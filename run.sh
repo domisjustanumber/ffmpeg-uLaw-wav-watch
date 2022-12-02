@@ -18,7 +18,7 @@ process() {
   file=$1
   filepath=${file:2}
   input="$WATCH"/"$filepath"
-  destination="$STORAGE"/"${filepath%.*}"."$EXTENSION"
+  destination="$STORAGE"/"${filepath%.*}".wav
   cd "$STORAGE" && mkdir -p "$(dirname "$filepath")" && cd ..
 
   echo $(date +"%Y-%m-%d-%T")
