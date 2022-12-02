@@ -1,4 +1,4 @@
-FROM linuxserver/ffmpeg
+FROM jrottenberg/ffmpeg
 RUN apk add --no-cache cpulimit
 RUN apk add --no-cache bash
 WORKDIR /usr/src/ffmpeg-watch
