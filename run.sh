@@ -35,7 +35,8 @@ process() {
     -c:a pcm_mulaw \
     "$destination"
 
-  killall ffmpeg >/dev/null
+  # Goes so fast no need to do this
+  # killall ffmpeg >/dev/null
 
   echo "Finished encoding $filepath"
   echo $(date +"%Y-%m-%d-%T")
