@@ -1,4 +1,4 @@
-# ffmpeg-watch
+# ffmpeg-uLaw-wav-watch
 
 A Docker container designed to watch a directory and encode any file to 8 bit mono uLaw WAV files
 
