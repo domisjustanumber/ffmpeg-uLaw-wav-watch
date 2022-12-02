@@ -1,4 +1,5 @@
 FROM linuxserver/ffmpeg
+RUN apk add --no-cache cpulimit
 RUN apk add --no-cache bash
 WORKDIR /usr/src/ffmpeg-watch
 COPY crontab /etc/crontabs/root
