@@ -42,7 +42,7 @@ process() {
   echo $(date +"%Y-%m-%d-%T")
 
   path=${filepath%/*}
-  mv "$STORAGE"/"$path" "$OUTPUT"/"$path"
+  mv "$destination" "$OUTPUT"/"$path"
   rm -rf "$WATCH"/"$path"
 }
 
