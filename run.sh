@@ -22,7 +22,7 @@ process() {
   cd "$STORAGE" && mkdir -p "$(dirname "$filepath")" && cd ..
 
   echo $(date +"%Y-%m-%d-%T")
-  echo "Saving file to $destination"
+  echo "Found $file"
 
   trap 'exit' INT
   ffmpeg \
@@ -30,8 +30,8 @@ process() {
     -y \
     -loglevel warning \
     -i "$input" \
-    -ar 8000
-    -ac 1
+    -ar 8000 \
+    -ac 1 \
     -c:a pcm_mulaw \
     "$destination"
 
