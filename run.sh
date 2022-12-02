@@ -27,7 +27,7 @@ process() {
   nice -- ffmpeg \
     -hide_banner \
     -y \
-    -loglevel warning \
+    -loglevel debug \
     -i "$input" \
     -ar 8000
     -ac 1
